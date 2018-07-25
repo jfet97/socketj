@@ -1,5 +1,5 @@
 // Make connection
-   const socket = io.connect('localhost:5000');
+   const socket = io.connect('https://git.heroku.com/socketj.git:5000');
 
 
 // Query DOM
