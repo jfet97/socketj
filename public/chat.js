@@ -9,6 +9,7 @@ const
     btn = document.getElementById('send'),
     output = document.getElementById('output'),
     feedback = document.getElementById('feedback');
+    chat = document.getElementById('chat-window');
 
 // Emit events
 btn.addEventListener('click', () => {
@@ -68,6 +69,9 @@ socket.on('chat-response', (data) => {
     p.appendChild(message);
 
     output.appendChild(p);
+
+    shouldScroll = chat.scrollTop + chat.clientHeight === chat.scrollHeight;
+    if(shouldScroll) chat.scrollTop = chat.scrollHeight;
 });
 
 
