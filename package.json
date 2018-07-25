@@ -1,0 +1,20 @@
+{
+  "name": "websocket-chat",
+  "version": "1.0.0",
+  "description": "A new powerful stupidaggine",
+  "main": "node.js",
+  "scripts": {
+    "start": "node node.js",
+    "devlp": "nodemon node.js"
+  },
+  "author": "Andrea Simone Costa <andrysimo1997@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
