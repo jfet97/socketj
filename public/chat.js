@@ -1,5 +1,5 @@
 // Make connection
-   const socket = io.connect('https://socketj.herokuapp.com/:5000');
+   const socket = io.connect(`https://socketj.herokuapp.com/:${process.env.PORT || 3000}`);
 
 
 // Query DOM
