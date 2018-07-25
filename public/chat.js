@@ -9,7 +9,7 @@ const
     btn = document.getElementById('send'),
     output = document.getElementById('output'),
     feedback = document.getElementById('feedback');
-chat = document.getElementById('chat-window');
+    chat = document.getElementById('chat-window');
 
 // Emit events
 btn.addEventListener('click', () => {
@@ -23,9 +23,11 @@ btn.addEventListener('click', () => {
     message.value = "";
 });
 
+/*
 btn.addEventListener("keyup", (event) => {
 
     if (event.keyCode === 13) {
+        console.log(1222);
         // message name, message data
         if ((!message.value) || (!handle.value)) return;
         socket.emit('chat', {
@@ -35,7 +37,19 @@ btn.addEventListener("keyup", (event) => {
 
         message.value = "";
     }
+});*/
+
+message.addEventListener("keyup", event => {
+    console.log(event.key);
+    if(event.key !== "Enter") return; // Use `.key` instead.
+    if ((!message.value) || (!handle.value)) return;
+    socket.emit('chat', {
+        "message": message.value,
+        "handle": handle.value
+    });
+    message.value = "";
 });
+
 
 /*
 message.addEventListener('keypress', () => {
