@@ -1,13 +1,14 @@
 const express = require('express');
 const socket = require('socket.io');
 const cors = require('cors');
-app.use(cors());
+const PORT = process.env.PORT || 3000;
 
 
 // App setup
 const app = express();
+app.use(cors());
 // Server setup for socket
-const server = app.listen(5000, () => console.log('listening to requests on port 5000'));
+const server = app.listen(PORT, () => console.log('listening to requests on port 5000'));
 
 // Static files: middleware che serve sempre pagina html cercandola nella pagina public
 
